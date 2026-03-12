@@ -1,22 +1,84 @@
-# Lead-Scoring-Case-Study
-## Objective
-An education company named X Education sells online courses to industry professionals. On any given day, many professionals who are interested in the courses land on their website and browse for courses. The company markets its courses on several websites and search engines like Google. Once these people land on the website, they might browse the courses or fill up a form for the course or watch some videos. When these people fill up a form providing their email address or phone number, they are classified to be a lead. Moreover, the company also gets leads through past referrals. Once these leads are acquired, employees from the sales team start making calls, writing emails, etc. Through this process, some of the leads get converted while most do not. The typical lead conversion rate at X education is around 30%. Now, although X Education gets a lot of leads, its lead conversion rate is very poor. For example, if, say, they acquire 100 leads in a day, only about 30 of them are converted. To make this process more efficient, the company wishes to identify the most potential leads, also known as ‘Hot Leads’. If they successfully identify this set of leads, the lead conversion rate should go up as the sales team will now be focusing more on communicating with the potential leads rather than making calls to everyone.Build a logistic regression model to assign a lead score between 0 and 100 to each of the leads which can be used by the company to target potential leads. A higher score would mean that the lead is hot, i.e. is most likely to convert whereas a lower score would mean that the lead is cold and will mostly not get converted.There are some more problems presented by the company which your model should be able to adjust to if the company's requirement changes in the future so you will need to handle these as well. These problems are provided in a separate doc file. Please fill it based on the logistic regression model you got in the first step. Also, make sure you include this in your final PPT where you'll make recommendations.
-## Steps Followed
-- Reading Data
-- Cleaning Data
-- EDA
-- Creating Dummy
-- Splitting data into train and test set
-- Building Model
-- Making Predictions
-- Model Evaluation
-- ROC Curve
-- Prediction on test set
-- Precision- Recall
-## Details of files given
-- Lead Score Case Study_Karan Parekh.ipynb : The python file showing coding and data analysis
-- Assignment Subjective Questions.pdf : Some subjective questions answered
-- Lead Score Case Study.pdf : Final Presentation
-- Leads.csv : Data worked on
-- Leads Data Dictionary.xlsx : Data Dictionary
-- Summary.pdf : Summary on what's done in the entire py file
+# Lead Scoring Case Study
+
+**Building a logistic regression model to identify high-potential sales leads and improve conversion rates.**
+
+**Author:** Karan Parekh
+
+---
+
+## Problem Statement
+
+X Education, an online course provider, acquires thousands of leads daily but converts only ~30%. The sales team wastes effort calling low-potential prospects. The goal: **build a lead scoring model** that assigns scores (0–100) to each lead, enabling the sales team to focus on "Hot Leads" most likely to convert.
+
+---
+
+## Approach
+
+| Step | Description |
+|------|------------|
+| **Data Cleaning** | Handled missing values, removed columns with >40% nulls, imputed categorical features |
+| **EDA** | Analyzed conversion rates across lead sources, occupations, and engagement metrics |
+| **Feature Engineering** | Created dummy variables for categorical features, dropped redundant/multicollinear columns |
+| **Model Building** | Logistic Regression with Recursive Feature Elimination (RFE) for feature selection |
+| **Evaluation** | ROC-AUC, Precision-Recall curves, optimal threshold selection via F1 score |
+| **Scoring** | Mapped predicted probabilities to 0–100 lead scores |
+
+---
+
+## Key Results
+
+- **ROC-AUC:** ~0.86 on test set
+- **Optimal Threshold:** Selected via precision-recall tradeoff to maximize F1
+- **Top Predictors:** Lead source, total time spent on website, last activity type, current occupation
+- **Business Impact:** Model enables sales team to prioritize top-scoring leads, significantly improving conversion efficiency
+
+---
+
+## Tech Stack
+
+`Python` · `Pandas` · `NumPy` · `Matplotlib` · `Seaborn` · `Scikit-learn` · `Statsmodels` · `Logistic Regression` · `RFE`
+
+---
+
+## Repository Structure
+
+```
+├── Lead Score Case Study_Karan Parekh.ipynb   # Full analysis notebook
+├── Leads.csv                                   # Dataset (9,000+ leads)
+├── Assignment Subjective Questions.pdf          # Business questions answered
+├── Summary.pdf                                  # Executive summary of findings
+└── README.md
+```
+
+---
+
+## How to Run
+
+```bash
+git clone https://github.com/karanparekh14/Lead-Score-Case-Study.git
+cd Lead-Score-Case-Study
+pip install pandas numpy matplotlib seaborn scikit-learn statsmodels
+jupyter notebook "Lead Score Case Study_Karan Parekh.ipynb"
+```
+
+---
+
+## Pipeline Overview
+
+```
+Raw Data (9,000+ leads)
+    ↓
+Data Cleaning & Imputation
+    ↓
+Exploratory Data Analysis
+    ↓
+Feature Engineering (Dummy Variables)
+    ↓
+Train/Test Split (70/30)
+    ↓
+Logistic Regression + RFE
+    ↓
+Model Evaluation (ROC, Precision-Recall)
+    ↓
+Lead Score Assignment (0–100)
+```
