@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-X Education, an online course provider, acquires thousands of leads daily but converts only ~30%. The sales team wastes effort calling low-potential prospects. The goal: **build a lead scoring model** that assigns scores (0–100) to each lead, enabling the sales team to focus on "Hot Leads" most likely to convert.
+X Education, an online course provider, acquires thousands of leads daily but converts only ~30%. The sales team wastes effort calling low-potential prospects. The goal: **build a lead scoring model** that assigns each lead a score from 0 to 100, enabling the sales team to focus on the "Hot Leads" most likely to convert.
 
 ---
 
@@ -21,7 +21,7 @@ X Education, an online course provider, acquires thousands of leads daily but co
 | **Feature Engineering** | Created dummy variables for categorical features, dropped redundant/multicollinear columns |
 | **Model Building** | Logistic Regression with Recursive Feature Elimination (RFE) for feature selection |
 | **Evaluation** | ROC-AUC, Precision-Recall curves, optimal threshold selection via F1 score |
-| **Scoring** | Mapped predicted probabilities to 0–100 lead scores |
+| **Scoring** | Mapped predicted probabilities to lead scores from 0 to 100 |
 
 ---
 
@@ -80,5 +80,5 @@ Logistic Regression + RFE
     ↓
 Model Evaluation (ROC, Precision-Recall)
     ↓
-Lead Score Assignment (0–100)
+Lead Score Assignment (0 to 100)
 ```
