@@ -20,17 +20,21 @@ X Education, an online course provider, acquires thousands of leads daily but co
 | **EDA** | Analyzed conversion rates across lead sources, occupations, and engagement metrics |
 | **Feature Engineering** | Created dummy variables for categorical features, dropped redundant/multicollinear columns |
 | **Model Building** | Logistic Regression with Recursive Feature Elimination (RFE) for feature selection |
-| **Evaluation** | ROC-AUC, Precision-Recall curves, optimal threshold selection via F1 score |
+| **Evaluation** | ROC-AUC, sensitivity/specificity curve, precision-recall tradeoff for cutoff selection |
 | **Scoring** | Mapped predicted probabilities to lead scores from 0 to 100 |
 
 ---
 
 ## Key Results
 
-- **ROC-AUC:** ~0.86 on test set
-- **Optimal Threshold:** Selected via precision-recall tradeoff to maximize F1
-- **Top Predictors:** Lead source, total time spent on website, last activity type, current occupation
-- **Business Impact:** Model enables sales team to prioritize top-scoring leads, significantly improving conversion efficiency
+Figures below come straight from the executed notebook.
+
+- **Test set, final model at the precision-recall optimal cutoff: 81.5% accuracy, 76.3% recall, 73.3% precision**
+- Test confusion matrix: 1,472 true negatives, 272 false positives, 232 false negatives, 747 true positives
+- **ROC-AUC 0.88**, computed on the training set. A separate test-set AUC was not calculated in the notebook.
+- Training accuracy 81.1% against test accuracy 81.5%, so there is no meaningful overfitting gap
+- **Top predictors:** lead source, total time spent on website, last activity type, current occupation
+- **Business read:** at this cutoff the model catches roughly three out of four leads that actually convert, while about one in four flagged leads is a false alarm
 
 ---
 
