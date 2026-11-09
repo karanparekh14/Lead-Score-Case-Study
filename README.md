@@ -4,6 +4,15 @@
 
 **Author:** Karan Parekh
 
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/statsmodels-4051B5?style=flat-square" alt="statsmodels"> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter">
+</p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/pipeline-results-dark.svg">
+  <img alt="Lead scoring pipeline in six steps and test results: 81.5% accuracy, 76.3% recall, 73.3% precision, ROC-AUC 0.88 on the training set" src="assets/pipeline-results-light.svg" width="100%">
+</picture>
+
 ---
 
 ## Problem Statement
@@ -63,26 +72,4 @@ git clone https://github.com/karanparekh14/Lead-Score-Case-Study.git
 cd Lead-Score-Case-Study
 pip install pandas numpy matplotlib seaborn scikit-learn statsmodels
 jupyter notebook "Lead Score Case Study_Karan Parekh.ipynb"
-```
-
----
-
-## Pipeline Overview
-
-```
-Raw Data (9,000+ leads)
-    ↓
-Data Cleaning & Imputation
-    ↓
-Exploratory Data Analysis
-    ↓
-Feature Engineering (Dummy Variables)
-    ↓
-Train/Test Split (70/30)
-    ↓
-Logistic Regression + RFE
-    ↓
-Model Evaluation (ROC, Precision-Recall)
-    ↓
-Lead Score Assignment (0 to 100)
 ```
